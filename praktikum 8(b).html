@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Flexbox1</title>
+    <style>
+        body{
+            margin: 10px;
+            background-color: pink;
+
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            
+        }
+        header{
+            background-color: cadetblue;
+            padding: 10px;
+            text-align: center;
+            margin: 10px;
+
+        }
+        main{
+            display: flex;
+            flex: 1;
+        }
+        aside{
+            background-color: darkgray;
+            padding: 10px;
+            text-align: center;
+            flex: 1;
+            margin: 10px;
+        }
+        article{
+            background-color: hotpink;
+            padding: 10px;
+            text-align: center;
+            flex: 3;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px;
+        }
+        img{
+            max-width: 25%;
+        }
+        footer{
+            background-color: cadetblue;
+            padding: 10px;
+            text-align: center;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <header>header</header>
+    <main>
+        <aside>aside</aside>
+        <article>
+            <img src="/storage/emulated/0/DCIM/Camera/20231126_101757.jpg" alt="">
+            <img src="/storage/emulated/0/DCIM/Camera/20231126_101826.jpg" alt="">
+            <img src="/storage/emulated/0/DCIM/Camera/20231126_101809.jpg" alt="">  
+       </article>
+    </main>
+    <footer>footer</footer>
+     </div>  
+</body>
+</html>
