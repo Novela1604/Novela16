@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurs Converter</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Kurs Rupiah - Mata Uang Asing</legend>
+    <label for="foreignCurrency">Mata Uang Asing:</label>
+    <input type="number" id="foreignCurrency" placeholder="Masukkan nilai mata uang asing">
+
+    <label for="currencySelect">Pilih Mata Uang:</label>
+    <select id="currencySelect">
+        <option value="usd">Dollar US</option>
+        <option value="sgd">Dollar Singapore</option>
+        <option value="myr">Ringgit Malaysia</option>
+        <option value="jpy">Yen Jepang</option>
+        <option value="eur">Euro</option>
+        <option value="sar">Riyal Arab Saudi</option>
+    </select>
+
+    <label for="rupiahValue">Nilai Rupiah:</label>
+    <input type="text" id="rupiahValue" readonly>
+
+    <script>
+        document.getElementById('foreignCurrency').addEventListener('input', function() {
+            convertCurrency();
+        });
+
+        document.getElementById('currencySelect').addEventListener('change', function() {
+            convertCurrency();
+        });
+
+        function convertCurrency() {
+            const foreignCurrency = parseFloat(document.getElementById('foreignCurrency').value);
+            const selectedCurrency = document.getElementById('currencySelect').value;
+
+            let exchangeRate;
+
+            switch (selectedCurrency) {
+                case 'usd':
+                    exchangeRate = 9915;
+                    break;
+                case 'sgd':
+                    exchangeRate = 13472;
+                    break;
+                case 'myr':
+                    exchangeRate = 874;
+                    break;
+                case 'jpy':
+                    exchangeRate = 120;
+                    break;
+                case 'eur':
+                    exchangeRate = 15888;
+                    break;
+                case 'sar':
+                    exchangeRate = 3592;
+                    break;
+                default:
+                    exchangeRate = 1;
+            }
+
+            const rupiahValue = foreignCurrency * exchangeRate;
+            document.getElementById('rupiahValue').value = rupiahValue.toFixed(2);
+        }
+    </script>
+</body>
+</html>
